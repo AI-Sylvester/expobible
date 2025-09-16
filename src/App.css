@@ -1,38 +1,122 @@
-.App {
-  text-align: center;
+/* 🔹 Body */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f8f9fa;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* 🔹 AppBar */
+.appbar-container {
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  background: linear-gradient(to right, #6e260e, #a67c52);
+  padding: 15px 40px;
+  color: #fff8dc;
+  text-shadow: 1px 1px 5px rgba(0,0,0,0.6);
+  border-bottom: 3px solid #cdaa7d;
+  position: relative;
+  z-index: 100;
+}
+
+/* Logo + Title */
+.appbar-logo-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.appbar-logo-img {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.appbar-title {
+  font-family: 'Baloo Thambi 2', cursive;
+  font-size: 30px;
+  font-weight: 700;
+  color: #ffcc00;
+  text-shadow: 3px 3px 8px rgba(0,0,0,0.6);
+  letter-spacing: 2px;
+  margin: 0;
+}
+
+/* 🔹 Navigation */
+.appbar-nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  margin: 0;
+  padding: 0;
+}
+
+.appbar-nav ul li a {
   color: white;
+  text-decoration: none;
+  font-weight: bold;
 }
 
-.App-link {
-  color: #61dafb;
+.appbar-nav ul li a:hover {
+  text-decoration: underline;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+/* 🔹 Hamburger */
+.appbar-hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+}
+
+.appbar-hamburger div {
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  border-radius: 2px;
+}
+
+/* 🔹 Mobile Overlay */
+@media screen and (max-width: 768px) {
+  .appbar-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(46, 18, 10, 0.95);
+    transform: translateY(-100%);
+    transition: transform 0.3s ease-in-out;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
   }
-  to {
-    transform: rotate(360deg);
+
+  .appbar-nav.appbar-nav-open {
+    transform: translateY(0);
+  }
+
+  .appbar-nav ul {
+    flex-direction: column;
+    gap: 30px;
+    padding: 0;
+    font-size: 24px;
+    text-align: center;
+  }
+
+  .appbar-hamburger {
+    display: flex;
+  }
+
+  .appbar-title {
+    font-size: 20px;
+    letter-spacing: 1px;
+  }
+
+  .appbar-logo-img {
+    width: 35px;
+    height: 35px;
   }
 }

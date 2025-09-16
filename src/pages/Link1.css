@@ -1,0 +1,180 @@
+/* General page container */
+.page-container {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  padding: 20px;
+  font-family: 'Poppins', sans-serif;
+  background-color: #fdf6f0;
+  color: #333;
+}
+
+/* Intro text */
+.intro {
+  font-size: 16px;
+  line-height: 1.7;
+  padding: 10px 15px;
+  background: #fff8f0;
+  border-left: 5px solid #cdaa7d;
+  border-radius: 5px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+/* Vertical Tabs */
+.vertical-tabs {
+  display: flex;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  background: #fff;
+  min-height: 320px;
+}
+
+/* Tab list */
+.tabs {
+  display: flex;
+  flex-direction: column;
+  width: 240px;
+  background: #f7f3f0;
+  border-right: 1px solid #e0d4c0;
+  transition: background 0.3s;
+}
+
+.tab {
+  padding: 15px 12px;
+  cursor: pointer;
+  border-bottom: 1px solid #e0d4c0;
+  font-weight: 500;
+  transition: all 0.3s;
+  color: #5b3a29;
+}
+
+.tab:hover {
+  background: #e8d4b8;
+  color: #2a1a0f;
+}
+
+.tab.active {
+  background: #cdaa7d;
+  color: #fff;
+  font-weight: 600;
+  box-shadow: inset 0 0 10px rgba(0,0,0,0.1);
+}
+
+/* Buttons inside tabs */
+.tab-buttons {
+  margin-top: 8px;
+  display: flex;
+  gap: 6px;
+}
+
+.tab-buttons button {
+  padding: 4px 8px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  background: #ffffff;
+  transition: all 0.3s;
+}
+
+.tab-buttons button:hover {
+  background: #c5fa07;
+}
+
+/* Popup overlay */
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.55);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  animation: fadeIn 0.3s;
+}
+
+/* Popup content */
+.popup-content {
+  background: #fffdf9;
+  padding: 25px;
+  width: 90%;
+  max-width: 750px;
+  border-radius: 12px;
+  max-height: 80%;
+  overflow-y: auto;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+  position: relative;
+  animation: slideIn 0.3s;
+}
+
+/* Popup header */
+.popup-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.popup-header h3 {
+  font-size: 20px;
+  color: #5b3a29;
+}
+
+.close-icon {
+  cursor: pointer;
+  font-size: 24px;
+  color: #c44a4a;
+  font-weight: bold;
+  transition: color 0.2s;
+}
+
+.close-icon:hover {
+  color: #ff0000;
+}
+
+/* Popup body */
+.popup-body {
+  font-size: 16px;
+  line-height: 1.7;
+  color: #333;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; } 
+  to { opacity: 1; }
+}
+
+@keyframes slideIn {
+  from { transform: translateY(-20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+  .vertical-tabs {
+    flex-direction: column;
+    min-height: 400px;
+  }
+
+  .tabs {
+    width: 100%;
+    max-height: 600px; /* ✅ restrict height */
+    overflow-y: auto;   /* ✅ enable vertical scroll */
+    flex-direction: column;
+    border-right: none;
+    border-bottom: 1px solid #e0d4c0;
+    background: #f7f3f0;
+  }
+
+  .tab {
+    width: 100%;
+    border-bottom: 1px solid #e0d4c0;
+    text-align: left;
+    padding: 12px 15px;
+  }
+}
