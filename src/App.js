@@ -4,6 +4,7 @@ import Home from "./pages/Home";
 import Link1 from "./pages/Link1";
 import Link2 from "./pages/Link2";
 import Link3 from "./pages/Link3";
+import Link5 from "./pages/Link5";
 import "./App.css";
 import Logo from "./logo.png";
 
@@ -38,8 +39,11 @@ function App() {
 </Link></li>
               <li><Link to="/link2" onClick={() => setMenuOpen(false)}>
 நிகழ்வுகள்</Link></li>
+ <li><Link to="/link5" onClick={() => setMenuOpen(false)}>
+ஆவிக்குரிய அர்த்தம்</Link></li>
               <li><Link to="/link3" onClick={() => setMenuOpen(false)}>
 கேலரி</Link></li>
+
             </ul>
           </nav>
         </header>
@@ -50,6 +54,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/link1" element={<Link1 />} />
             <Route path="/link2" element={<Link2 />} />
+               <Route path="/link5" element={<Link5 />} />
             <Route path="/link3" element={<Link3 />} />
           </Routes>
         </main>

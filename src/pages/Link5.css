@@ -1,0 +1,109 @@
+/* ===== Link5 Page Unique Styling ===== */
+
+.link5-container {
+  padding: 40px 20px;
+  max-width: 950px;
+  margin: auto;
+  font-family: "Noto Sans Tamil", sans-serif;
+  color: #2d225f;
+  background-color: #faf8ff;
+  border-radius: 16px;
+  box-shadow: 0 4px 10px rgba(110, 81, 186, 0.15);
+}
+
+.link5-title {
+  text-align: center;
+  color: #4a2e8e;
+  font-size: 2rem;
+  margin-bottom: 30px;
+  font-weight: 700;
+}
+
+.link5-timeline {
+  margin-bottom: 40px;
+}
+
+.link5-timeline-item {
+  background: #f1e9ff;
+  border-left: 6px solid #6c4fd4;
+  padding: 20px;
+  border-radius: 12px;
+  margin-bottom: 20px;
+}
+
+.link5-heading {
+  font-size: 1.4rem;
+  color: #3c1d72;
+  margin-bottom: 10px;
+}
+
+.link5-list {
+  list-style-type: "✦ ";
+  padding-left: 25px;
+  line-height: 1.9;
+  font-size: 1.05rem;
+}
+
+.link5-summary {
+  background: #ece3ff;
+  padding: 15px;
+  border-radius: 10px;
+  font-style: italic;
+  text-align: center;
+  color: #4a357d;
+}
+
+.link5-meaning-section {
+  margin-top: 40px;
+  text-align: center;
+}
+
+.link5-subtitle {
+  font-size: 1.8rem;
+  color: #4a2e8e;
+  margin-bottom: 20px;
+}
+
+.link5-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #ffffff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 6px rgba(76, 43, 153, 0.1);
+}
+
+.link5-table th,
+.link5-table td {
+  border: 1px solid #ddd;
+  padding: 12px;
+  font-size: 1rem;
+  text-align: center;
+}
+
+.link5-table th {
+  background-color: #e7dbff;
+  color: #3c1d72;
+  font-weight: bold;
+}
+
+.link5-table tr:nth-child(even) {
+  background-color: #f6f2ff;
+}
+
+/* ===== Responsive Design ===== */
+@media (max-width: 768px) {
+  .link5-table th,
+  .link5-table td {
+    padding: 10px 8px;
+    font-size: 0.9rem;
+  }
+
+  .link5-subtitle {
+    font-size: 1.4rem;
+  }
+
+  .link5-title {
+    font-size: 1.6rem;
+  }
+}
