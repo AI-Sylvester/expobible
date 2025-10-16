@@ -44,18 +44,19 @@ function Home() {
   return (
     <div className="gallery-glow-container">
       <div className="gallery-glow-logos">
+         <img
+          src={HB}
+          alt="Bread"
+          className={`gallery-logo logo2 ${animateLogo === "logo2" ? "float-up2" : ""}`}
+          onClick={() => playAudio(BAudio, "logo2")}
+        />
         <img
           src={CH}
           alt="Cup"
           className={`gallery-logo logo1 ${animateLogo === "logo1" ? "float-up1" : ""}`}
           onClick={() => playAudio(AAudio, "logo1")}
         />
-        <img
-          src={HB}
-          alt="Bread"
-          className={`gallery-logo logo2 ${animateLogo === "logo2" ? "float-up2" : ""}`}
-          onClick={() => playAudio(BAudio, "logo2")}
-        />
+       
       </div>
     </div>
   );
