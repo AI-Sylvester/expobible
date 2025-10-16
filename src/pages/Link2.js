@@ -1,61 +1,25 @@
 import React from "react";
 import "./Link2.css";
+import eventsDataTa from "./data/eventData.js";      // Tamil events
+import eventsDataEn from "./data/eventDataEn.js";    // English events
 
-function Link2() {
+function Link2({ language = "ta" }) {
+  // Select dataset based on language
+  const eventsData = language === "ta" ? eventsDataTa : eventsDataEn;
+
+  const title = language === "ta" ? "நிகழ்வுகள்" : "Events";
+
   return (
     <div className="page-container">
-      <h1 className="title">நிகழ்வுகள்</h1>
+      <h1 className="title">{title}</h1>
 
       <div className="timeline">
-        <div className="timeline-item">
-          <h3> பஸ்கா விருந்து</h3>
-          <p>
-            கடைசி இராப்போஜனம் யூதர்களின் பஸ்கா பண்டிகையின் போது நடந்தது, இது எகிப்தில்
-            அடிமைத்தனத்திலிருந்து இஸ்ரவேலர்களை கடவுள் விடுவித்ததை நினைவுகூறுகிறது
-            (யாத்திராகமம் 12). இயேசுவும் அவருடைய சீடர்களும் எருசலேமில் உள்ள மேல்
-            அறையில் பஸ்கா விருந்து சாப்பிட்டனர்.
-          </p>
-        </div>
-
-        <div className="timeline-item">
-          <h3> பாதங்களை கழுவுதல் (யோவான் 13:1–17)</h3>
-          <p>
-            இயேசு தன்னைத் தாழ்த்தி சீடர்களின் பாதங்களை கழுவி, உண்மையான தலைமைத்துவம்
-            மற்றவர்களுக்கு சேவை செய்வதே என்பதை காட்டினார்.
-          </p>
-        </div>
-
-        <div className="timeline-item">
-          <h3> கர்த்தருடைய இராப்போஜனத்தின் ஸ்தாபனம்</h3>
-          <p>
-            இயேசு அப்பத்தை எடுத்து, “இது உங்களுக்காக கொடுக்கப்பட்ட என்னுடைய சரீரம்;
-            என்னை நினைவுகூர்ந்து இதைச் செய்யுங்கள்” என்றார் (லூக்கா 22:19).  
-            பின்னர், அவர் திராட்சை ரசம் பற்றி, “இந்த பாத்திரம் என் இரத்தத்தினாலான
-            புதிய உடன்படிக்கை” என்றார் (லூக்கா 22:20).
-          </p>
-        </div>
-
-        <div className="timeline-item">
-          <h3> துரோகத்தின் முன்னறிவிப்பு</h3>
-          <p>
-            இயேசு தன் சீடர்களில் ஒருவன் தன்னைக் காட்டிக்கொடுப்பான் என்று
-            கூறினார். யூதாஸ் பின்னர் இயேசுவை கைது செய்ய ஏற்பாடு செய்ய வெளியேறினான்.
-          </p>
-        </div>
-
-     
-
-        <div className="timeline-item">
-          <h3> இறுதி போதனைகள் மற்றும் ஜெபம் (யோவான் 14–17)</h3>
-          <p>
-            இயேசு அன்பு, ஒற்றுமை, பரிசுத்த ஆவியின் வருகை குறித்து போதித்தார். அவர்
-            சீடர்களுக்காகவும், எதிர்கால விசுவாசிகளுக்காகவும் ஜெபித்தார்.
-          </p>
-        </div>
-
-     
-
-      
+        {eventsData.map((event, index) => (
+          <div key={index} className="timeline-item">
+            <h3>{event.title}</h3>
+            <p>{event.description}</p>
+          </div>
+        ))}
       </div>
     </div>
   );
