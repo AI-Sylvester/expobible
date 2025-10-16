@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./Link1.css";
-import versesData from "./data/versesData";
+import versesData from "./data/versesData.js";
 
 function Link1() {
   const [activeIndex, setActiveIndex] = useState(0);
