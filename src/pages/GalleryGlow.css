@@ -37,11 +37,10 @@
   letter-spacing: 2px;
 }
 
-/* 🔹 Logos container (Top Centered) */
-/* 🔹 Logos container (Bottom Centered) */
+/* 🔹 Logos container (Bottom Center) */
 .gallery-glow-logos {
   position: fixed;
-  bottom: 40px; /* move logos to bottom */
+  bottom: 40px; /* initial bottom */
   left: 50%;
   transform: translateX(-50%);
   display: flex;
@@ -49,26 +48,7 @@
   z-index: 100;
 }
 
-
-/* 🔹 Individual Logo */
-.gallery-logo {
-  width: 100px;
-  height: 100px;
-  cursor: pointer;
-  border-radius: 50%;
-  padding: 10px;
-  background: #fff;
-  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
-  transition: transform 0.3s ease;
-  animation: redYellowGlow 2s infinite alternate;
-}
-
-/* Hover zoom effect */
-.gallery-logo:hover {
-  transform: scale(1.15);
-}
-
-/* 🔹 Glow animation (red ↔ yellow) */
+/* 🔹 Glow animation (red ↔ yellow) only */
 @keyframes redYellowGlow {
   0% {
     box-shadow: 0 0 10px #ff0000, 0 0 20px #ff0000;
@@ -79,4 +59,43 @@
   100% {
     box-shadow: 0 0 10px #ff0000, 0 0 20px #ff0000;
   }
+}
+
+/* 🔹 Float up on click with pause at top */
+@keyframes floatUpOnce {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-150px); /* move up */
+  }
+  70% {
+    transform: translateY(-150px); /* pause at top */
+  }
+  100% {
+    transform: translateY(0); /* fall back */
+  }
+}
+
+/* 🔹 Logo styling */
+.gallery-logo {
+  width: 100px;
+  height: 100px;
+  cursor: pointer;
+  border-radius: 50%;
+  padding: 10px;
+  background: #fff;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease;
+  animation: redYellowGlow 2s infinite alternate; /* continuous glow */
+}
+
+/* Hover zoom */
+.gallery-logo:hover {
+  transform: scale(1.15);
+}
+
+/* 🔹 Trigger float on click */
+.float-up {
+  animation: floatUpOnce 20s ease-in-out forwards;
 }
