@@ -38,7 +38,8 @@
   50% { box-shadow: 0 0 20px #ffff00, 0 0 40px #ffcc00; }
   100% { box-shadow: 0 0 10px #ff0000, 0 0 20px #ff0000; }
 }
-/* Float animations */
+
+/* 🔹 Float animations */
 @keyframes floatUp1 {
   0% { transform: translateY(0); }
   50% { transform: translateY(-150px); }
@@ -52,15 +53,6 @@
   70% { transform: translateY(-120px); }
   100% { transform: translateY(0); }
 }
-
-/* Trigger float on click */
-.float-up1 {
-  animation: floatUp1 39s ease-in-out forwards; /* CH logo 39 seconds */
-}
-.float-up2 {
-  animation: floatUp2 25s ease-in-out forwards; /* HB logo 25 seconds */
-}
-
 
 /* 🔹 Logo styling */
 .gallery-logo {
@@ -81,8 +73,9 @@
 
 /* 🔹 Trigger float on click */
 .float-up1 {
-  animation: floatUp1 20s ease-in-out forwards;
+  animation: floatUp1 45s ease-in-out forwards; /* CH logo 45 seconds */
 }
+
 .float-up2 {
-  animation: floatUp2 20s ease-in-out forwards;
+  animation: floatUp2 26s ease-in-out forwards; /* HB logo 26 seconds */
 }

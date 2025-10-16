@@ -12,8 +12,14 @@ function Home() {
 
   const playAudio = (audioFile, logoId) => {
     // Stop other audio
-    if (audioRef1.current && logoId !== "logo1") audioRef1.current.pause();
-    if (audioRef2.current && logoId !== "logo2") audioRef2.current.pause();
+    if (audioRef1.current && logoId !== "logo1") {
+      audioRef1.current.pause();
+      audioRef1.current.currentTime = 0;
+    }
+    if (audioRef2.current && logoId !== "logo2") {
+      audioRef2.current.pause();
+      audioRef2.current.currentTime = 0;
+    }
 
     // Create or reuse audio
     let audio;
@@ -30,7 +36,8 @@ function Home() {
 
     // Animate
     setAnimateLogo(logoId);
-       const duration = logoId === "CH" ? 39000 : 25000;
+
+    const duration = logoId === "logo1" ? 45000 : 26000; // CH=45s, HB=26s
     setTimeout(() => setAnimateLogo(null), duration);
   };
 
