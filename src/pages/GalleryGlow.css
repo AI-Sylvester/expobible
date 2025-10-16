@@ -3,44 +3,28 @@
   padding: 20px;
   text-align: center;
   min-height: 100vh;
-
-  /* Background image */
   background-image: url("background.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-
   color: #fff;
   position: relative;
   z-index: 1;
 }
 
-/* Light overlay to brighten background */
 .gallery-glow-container::before {
   content: "";
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
   background: rgba(255, 255, 255, 0.2);
   z-index: -1;
 }
 
-/* 🔹 Title */
-.gallery-glow-title {
-  font-size: 2rem;
-  font-weight: bold;
-  margin-bottom: 60px;
-  color: #ffeb3b;
-  text-shadow: 0 0 15px #ff0000;
-  letter-spacing: 2px;
-}
-
-/* 🔹 Logos container (Bottom Center) */
+/* 🔹 Logos container */
 .gallery-glow-logos {
   position: fixed;
-  bottom: 40px; /* initial bottom */
+  bottom: 40px;
   left: 50%;
   transform: translateX(-50%);
   display: flex;
@@ -48,34 +32,35 @@
   z-index: 100;
 }
 
-/* 🔹 Glow animation (red ↔ yellow) only */
+/* 🔹 Glow animation */
 @keyframes redYellowGlow {
-  0% {
-    box-shadow: 0 0 10px #ff0000, 0 0 20px #ff0000;
-  }
-  50% {
-    box-shadow: 0 0 20px #ffff00, 0 0 40px #ffcc00;
-  }
-  100% {
-    box-shadow: 0 0 10px #ff0000, 0 0 20px #ff0000;
-  }
+  0% { box-shadow: 0 0 10px #ff0000, 0 0 20px #ff0000; }
+  50% { box-shadow: 0 0 20px #ffff00, 0 0 40px #ffcc00; }
+  100% { box-shadow: 0 0 10px #ff0000, 0 0 20px #ff0000; }
+}
+/* Float animations */
+@keyframes floatUp1 {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-150px); }
+  70% { transform: translateY(-150px); }
+  100% { transform: translateY(0); }
 }
 
-/* 🔹 Float up on click with pause at top */
-@keyframes floatUpOnce {
-  0% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-150px); /* move up */
-  }
-  70% {
-    transform: translateY(-150px); /* pause at top */
-  }
-  100% {
-    transform: translateY(0); /* fall back */
-  }
+@keyframes floatUp2 {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-120px); }
+  70% { transform: translateY(-120px); }
+  100% { transform: translateY(0); }
 }
+
+/* Trigger float on click */
+.float-up1 {
+  animation: floatUp1 39s ease-in-out forwards; /* CH logo 39 seconds */
+}
+.float-up2 {
+  animation: floatUp2 25s ease-in-out forwards; /* HB logo 25 seconds */
+}
+
 
 /* 🔹 Logo styling */
 .gallery-logo {
@@ -87,15 +72,17 @@
   background: #fff;
   box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
   transition: transform 0.3s ease;
-  animation: redYellowGlow 2s infinite alternate; /* continuous glow */
+  animation: redYellowGlow 2s infinite alternate;
 }
 
-/* Hover zoom */
 .gallery-logo:hover {
   transform: scale(1.15);
 }
 
 /* 🔹 Trigger float on click */
-.float-up {
-  animation: floatUpOnce 20s ease-in-out forwards;
+.float-up1 {
+  animation: floatUp1 20s ease-in-out forwards;
+}
+.float-up2 {
+  animation: floatUp2 20s ease-in-out forwards;
 }
