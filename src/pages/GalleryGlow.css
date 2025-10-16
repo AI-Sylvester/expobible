@@ -1,0 +1,82 @@
+/* 🔹 Container */
+.gallery-glow-container {
+  padding: 20px;
+  text-align: center;
+  min-height: 100vh;
+
+  /* Background image */
+  background-image: url("background.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  color: #fff;
+  position: relative;
+  z-index: 1;
+}
+
+/* Light overlay to brighten background */
+.gallery-glow-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.2);
+  z-index: -1;
+}
+
+/* 🔹 Title */
+.gallery-glow-title {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 60px;
+  color: #ffeb3b;
+  text-shadow: 0 0 15px #ff0000;
+  letter-spacing: 2px;
+}
+
+/* 🔹 Logos container (Top Centered) */
+/* 🔹 Logos container (Bottom Centered) */
+.gallery-glow-logos {
+  position: fixed;
+  bottom: 40px; /* move logos to bottom */
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 60px;
+  z-index: 100;
+}
+
+
+/* 🔹 Individual Logo */
+.gallery-logo {
+  width: 100px;
+  height: 100px;
+  cursor: pointer;
+  border-radius: 50%;
+  padding: 10px;
+  background: #fff;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease;
+  animation: redYellowGlow 2s infinite alternate;
+}
+
+/* Hover zoom effect */
+.gallery-logo:hover {
+  transform: scale(1.15);
+}
+
+/* 🔹 Glow animation (red ↔ yellow) */
+@keyframes redYellowGlow {
+  0% {
+    box-shadow: 0 0 10px #ff0000, 0 0 20px #ff0000;
+  }
+  50% {
+    box-shadow: 0 0 20px #ffff00, 0 0 40px #ffcc00;
+  }
+  100% {
+    box-shadow: 0 0 10px #ff0000, 0 0 20px #ff0000;
+  }
+}

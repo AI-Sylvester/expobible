@@ -25,8 +25,6 @@
   z-index: -1;
 }
 
-
-
 .bottom-logos {
   position: fixed;
   bottom: 20px;
@@ -35,6 +33,37 @@
   display: flex;
   gap: 40px;
   z-index: 10;
+}
+
+.bottom-logos img {
+  width: 50px;
+  height: 50px;
+  animation: redYellowGlow 2.5s infinite ease-in-out;
+  transition: transform 0.3s ease;
+}
+
+/* Optional: zoom effect on hover */
+.bottom-logos img:hover {
+  transform: scale(1.1);
+}
+
+/* 🔹 Keyframes: alternate between red and yellow glow */
+@keyframes redYellowGlow {
+  0% {
+    filter: drop-shadow(0 0 0px rgba(255, 0, 0, 0.3));
+  }
+  25% {
+    filter: drop-shadow(0 0 10px rgba(255, 0, 0, 0.8));
+  }
+  50% {
+    filter: drop-shadow(0 0 20px rgba(255, 255, 0, 0.9));
+  }
+  75% {
+    filter: drop-shadow(0 0 10px rgba(255, 0, 0, 0.8));
+  }
+  100% {
+    filter: drop-shadow(0 0 0px rgba(255, 255, 0, 0.3));
+  }
 }
 
 .logo {
